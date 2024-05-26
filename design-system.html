@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+            rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css"></link>
+    <title>Document</title>
+</head>
+<body class="bg-dark text-white">
+    <div class="container">
+        <section id="color" style="margin: 4rem 0;">
+            <p class="uppercase ff-sans-cond letter-spacing-1"><span style="opacity: 0.5;">01</span> Colors</p>
+            <div class="flex" style="--gap: 3rem;">
+                <div style="flex-grow: 1">
+                    <div class="bg-dark" style="border: 1px solid white; padding: 3rem 1rem 1rem">#0B0D17</div>
+                    <p><span class="text-accend">RGB</span> 11,13,23</p>
+                    <p><span class="text-accend">HSL</span> 230°, 35%, 7%</p>
+                </div>
+                <div style="flex-grow: 1">
+                    <div class="bg-accend text-dark" style="border: 1px solid var(--clr-dark); padding: 3rem 1rem 1rem">#0B0D17</div>
+                    <p><span class="text-accend">RGB</span> 11,13,23</p>
+                    <p><span class="text-accend">HSL</span> 231°, 77%, 90%</p>
+                </div>
+                <div style="flex-grow: 1">
+                    <div class="bg-white text-dark" style="border: 1px solid white; padding: 3rem 1rem 1rem">#0B0D17</div>
+                    <p><span class="text-accend">RGB</span> 11,13,23</p>
+                    <p><span class="text-accend">HSL</span> 0°, 0%, 100%</p>
+                </div>
+            </div>
+        </section>
+        <section id="typography">
+            <p class="uppercase ff-sans-cond letter-spacing-1"><span style="opacity: 0.5;">02</span> Typography</p>
+            <div class="flex">
+                <div class="flow" style="flex-basis: 100%; --flow-space: 1rem;">
+                    <div>
+                        <p class="text-accend fs-400">Heading 1 - Bellefair Regular - 150px</p>
+                        <p class="uppercase ff-serif fs-900">Earth</p>
+                    </div>
+                    <div>
+                        <p class="text-accend fs-400">Heading 2 - Bellefair Regular - 100px</p>
+                        <p class="uppercase ff-serif fs-800">Venus</p>
+                    </div>
+                    <div>
+                        <p class="text-accend fs-400">Heading 3 - Bellefair Regular - 56px</p>
+                        <p class="uppercase ff-serif fs-700">Jupiter & Saturn</p>
+                    </div>
+                    <div>
+                        <p class="text-accend fs-400">Heading 4 - Bellefair Regular - 32px</p>
+                        <p class="uppercase ff-serif fs-600">Uranus, Nepture & Pluto</p>
+                    </div>
+                    <div>
+                        <p class="text-accend fs-400">Heading 5 - Barlow Condensed Regular - 28px - 4.75 Character Space</p>
+                        <p class="uppercase text-accend fs-500 letter-spacing-1">So, you want to travel to space</p>
+                    </div>
+                </div>
+                <div class="flow" style="flex-basis: 100%; --flow-space: 3.5rem">
+                    <div>
+                        <p class="text-accend fs-400">Subheading1 - Bellefair Regular - 28px</p>
+                        <p class="ff-serif fs-500">384,400KM</p>
+                    </div>
+                    <div>
+                        <p class="text-accend fs-400">Subheading2 - Barlow Condensed Regular - 14px - 2.35 Character Space</p>
+                        <p class="ff-sans-cond fs-200 letter-spacing-3">Avg.Distance</p>
+                    </div>
+                    <div>
+                        <p class="text-accend fs-400">Nav Text - Barlow Condensed Regular - 16px - 2.7 Character Space</p>
+                        <p class="ff-sans-cond fs-300 letter-spacing-2">Europa</p>
+                    </div>
+                    <div>
+                        <p class="ff-sans fs-400 text-white" style="--opacity: 0.5">Body Text</p>
+                        <p class="text-white fs-400">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container" id="interactive-elements" style="margin-top: 5rem;">
+            <div style="flex-basis: 100%;">
+                <nav aria-label="Navigation activation">
+                    <ul class="flex primary-navigation larger-underline-navigation">
+                        <li class="active"><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-2 uppercase"><span aria-hidden="true">00</span>Active</a></li>
+                        <li><a href="#" class="ff-sans-cond text-white fs-300 letter-spacing-2 uppercase"><span aria-hidden="true">01</span>Hovered</a></li>
+                        <li><a href="#" class="ff-sans-cond text-white fs-300 letter-spacing-2 uppercase"><span aria-hidden="true">02</span>Idle</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex" style="height: 10rem;">
+                <div style="margin-top: 5rem;">
+                    <a href="#" class="large-button uppercase ff-serif fs-600 text-dark bg-white">Explore</a>
+                    <p class="ff-sans fs-400">Landing Page Main Button - Hover</p>
+                </div>
+                
+                <div class="flow" style="margin-bottom: 50vh; --flow-space: 5rem;">
+                    <!-- Tabs -->
+                    <div class="flex smaller-underline-navigation">
+                        <button class="active bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Moon</button>
+                        <button class="bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Mars</button>
+                        <button class="bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Europa</button>
+                    </div>
+                    
+                    <!-- Dots -->
+                    <div class="dot-navigation flex">
+                        <button aria-selected="true" class="active"><span class="sr-only">Title 1</span></button>
+                        <button aria-selected="false"><span class="sr-only">Title 2</span></button>
+                        <button aria-selected="false"><span class="sr-only">Title 3</span></button>
+                    </div>
+                    
+                    <!-- Numbers -->
+                    <div class="button-navigation flex">
+                        <button aria-selected="true" class="active fs-600 ff-serif">1</button>
+                        <button aria-selected="false" class="fs-600 ff-serif"><span>2</span></button>
+                        <button aria-selected="false" class="fs-600 ff-serif"><span>3</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
