@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header class="primary-header flex">
+        <picture>
+            <source srcset="image/space-icon.png" type="image/webp"></source>
+            <img class="header-icon" src="image/space-icon.png"/>
+        </picture>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
+        <nav>
+            <ul data-visible="false" class="flex primary-navigation larger-underline-navigation">
+                <li class="active"><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">00</span>Home</a></li>
+                <li><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">01</span>Destination</a></li>
+                <li><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">02</span>Crew</a></li>
+                <li><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">03</span>Technology</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="grid-container grid-container--technology flow flow-space--small">
+        <h1 class="title title--technology fs-500 uppercase ff-sans-cond letter-spacing-1"><span style="opacity: 0.5;">03 </span>Space Launch 101</h1>
+        <div class="button-navigation flex technology-navigation">
+            <button aria-selected="true" class="active fs-600 ff-serif">1</button>
+            <button aria-selected="false" class="fs-600 ff-serif"><span>2</span></button>
+            <button aria-selected="false" class="fs-600 ff-serif"><span>3</span></button>
+        </div>
+        <article class="technology-content flow flow-space--small">
+            <header>
+                <p class="uppercase ff-sans-cond letter-spacing-1">THE TERMINOLOGY…</p>
+                <h2 class="fs-600 ff-serif">LAUNCH VEHICLE</h1>
+            </header>
+            <p class="text-accend fs-400">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
+        </article>
+        <picture class="flex">
+            <source srcset="image/technology1.jpg" type="image/webp">
+            <img src="image/technology1.jpg">
+        </picture>
+    </main>
+</body>
+</html>
