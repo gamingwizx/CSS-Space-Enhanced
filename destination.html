@@ -9,37 +9,47 @@
             rel="stylesheet">
     <link rel="stylesheet" href="style.css"></link>
     <script src="script.js" defer></script>
+    <script src="navigation.js" defer></script>
     <title>Document</title>
 </head>
 <body>
     <header class="primary-header flex">
-        <picture>
-            <source srcset="image/space-icon.png" type="image/webp"></source>
-            <img class="header-icon" src="image/space-icon.png"/>
-        </picture>
+        <img class="header-icon" src="image/space-icon.png"/>
         <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
         <nav>
             <ul data-visible="false" class="flex primary-navigation larger-underline-navigation">
-                <li class="active"><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">00</span>Home</a></li>
-                <li><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">01</span>Destination</a></li>
-                <li><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">02</span>Crew</a></li>
-                <li><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">03</span>Technology</a></li>
+                <li><a href="index.html" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">00</span>Home</a></li>
+                <li class="active"><a href="destination.html" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">01</span>Destination</a></li>
+                <li><a href="crew.html" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">02</span>Crew</a></li>
+                <li><a href="technology.html" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">03</span>Technology</a></li>
             </ul>
         </nav>
     </header>
     <main class="grid-container grid-container--destination flow">
         <p class="title uppercase ff-sans-cond letter-spacing-1"><span style="opacity: 0.5;">01 </span>Pick your destination</p>
-            <picture>
+            <picture id="image-moon">
                 <source srcset="image/moon.webp" type="image/webp">
-                <img src="image/moon.png" alt="Flowers" style="width:auto;">
+                <img src="image/moon.png" alt="The moon" style="width:auto;">
+            </picture id="image-mars">
+            <picture id="image-mars" hidden>
+                <source srcset="image/mars.webp" type="image/webp">
+                <img src="image/mars.png" alt="The mars" style="width:auto;">
             </picture>
-        <div class="flex smaller-underline-navigation tab-list">
-            <button class="active bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Moon</button>
-            <button class="bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Mars</button>
-            <button class="bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Europa</button>
-            <button class="bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Titan</button>
+            <picture id="image-europa" hidden>
+                <source srcset="image/europa.webp" type="image/webp">
+                <img src="image/europa.png" alt="The europa" style="width:auto;">
+            </picture>
+            <picture id="image-titan" hidden>
+                <source srcset="image/titan.webp" type="image/webp">
+                <img src="image/titan.png" alt="The Titan" style="width:auto;">
+            </picture>
+        <div class="flex smaller-underline-navigation tab-list" role="tabList">
+            <button aria-selected="true" aria-controls="moon-tab" role="tab" tabindex="0" data-image="image-moon" class="bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Moon</button>
+            <button aria-selected="false" aria-controls="mars-tab" role="tab" tabindex="-1" data-image="image-mars" class="bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Mars</button>
+            <button aria-selected="false" aria-controls="europa-tab" role="tab" tabindex="-1" data-image="image-europa" class="bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Europa</button>
+            <button aria-selected="false" aria-controls="titan-tab" role="tab" tabindex="-1" data-image="image-titan" class="bg-dark ff-sans-cond fs-300 letter-spacing-2 uppercase text-accend" style="--padding-gap: 1rem;">Titan</button>
         </div>
-        <article class="destination-info">
+        <article class="destination-info" id="moon-tab" tabindex="0" role="tabpanel">
             <p class="uppercase ff-serif fs-900">Moon</p>
             <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
             <div class="flex destination-meta">
@@ -50,6 +60,48 @@
                 <div>
                     <h3 class="ff-sans-cond fs-200 letter-spacing-3">Est. Travel Time</h3>
                     <p class="ff-serif fs-500">3 Days</p>
+                </div>
+            </div>
+        </article>
+        <article class="destination-info" id="mars-tab" tabindex="-1" role="tabpanel" hidden>
+            <p class="uppercase ff-serif fs-900">Mars</p>
+            <p>Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!</p>
+            <div class="flex destination-meta">
+                <div>
+                    <h3 class="ff-sans-cond fs-200 letter-spacing-3">Avg Distance</h3>
+                    <p class="ff-serif fs-500">225 MIL. km</p>
+                </div>
+                <div>
+                    <h3 class="ff-sans-cond fs-200 letter-spacing-3">Est. Travel Time</h3>
+                    <p class="ff-serif fs-500">9 months</p>
+                </div>
+            </div>
+        </article>
+        <article class="destination-info" id="europa-tab" tabindex="-1" role="tabpanel" hidden>
+            <p class="uppercase ff-serif fs-900">EUROPA</p>
+            <p>The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.</p>
+            <div class="flex destination-meta">
+                <div>
+                    <h3 class="ff-sans-cond fs-200 letter-spacing-3">Avg Distance</h3>
+                    <p class="ff-serif fs-500">628 MIL. km</p>
+                </div>
+                <div>
+                    <h3 class="ff-sans-cond fs-200 letter-spacing-3">Est. Travel Time</h3>
+                    <p class="ff-serif fs-500">3 years</p>
+                </div>
+            </div>
+        </article>
+        <article class="destination-info" id="titan-tab" tabindex="-1" role="tabpanel" hidden>
+            <p class="uppercase ff-serif fs-900">TITAN</p>
+            <p>The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.</p>
+            <div class="flex destination-meta">
+                <div>
+                    <h3 class="ff-sans-cond fs-200 letter-spacing-3">Avg Distance</h3>
+                    <p class="ff-serif fs-500">1.6 BIL. km</p>
+                </div>
+                <div>
+                    <h3 class="ff-sans-cond fs-200 letter-spacing-3">Est. Travel Time</h3>
+                    <p class="ff-serif fs-500">7 years</p>
                 </div>
             </div>
         </article>

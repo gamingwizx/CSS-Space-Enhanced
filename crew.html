@@ -14,35 +14,36 @@
   <!-- Our custom CSS -->
   <link rel="stylesheet" href="style.css">
   <script src="index.js" defer></script>
+  <script src="navigation.js" defer></script>
 </head>
 
 <body class="crew">
-  <header class="primary-header flex">
+  <header class="primary-header flex" data-icon>
     <div>
         <img class="header-icon" src="image/space-icon.png"/>
     </div>
     <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
     <nav>
-        <ul data-visible="false" class="flex primary-navigation larger-underline-navigation">
-            <li class="active"><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">00</span>Home</a></li>
-            <li><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">01</span>Destination</a></li>
-            <li><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">02</span>Crew</a></li>
-            <li><a href="#" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">03</span>Technology</a></li>
-        </ul>
-    </nav>
+      <ul data-visible="false" class="flex primary-navigation larger-underline-navigation">
+          <li><a href="index.html" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">00</span>Home</a></li>
+          <li><a href="destination.html" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">01</span>Destination</a></li>
+          <li class="active"><a href="crew.html" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">02</span>Crew</a></li>
+          <li><a href="technology.html" class="text-white ff-sans-cond fs-300 letter-spacing-1 uppercase"><span aria-hidden="true">03</span>Technology</a></li>
+      </ul>
+  </nav>
 </header>
   
   <main id="main" class="grid-container grid-container--crew flow">
     <p class="title uppercase ff-sans-cond letter-spacing-1"><span style="opacity: 0.5;">02 </span>Meet your crew</p>
     
-    <div class="dot-navigation flex">
-      <button aria-selected="true"><span class="sr-only">The commander</span></button>
-      <button aria-selected="false"><span class="sr-only">The mission specialist</span></button>
-      <button aria-selected="false"><span class="sr-only">The pilot</span></button>
-      <button aria-selected="false"><span class="sr-only">The crew engineer</span></button>
+    <div class="dot-navigation flex" role="tabList">
+      <button aria-selected="true" aria-controls="crew1" data-image="image-crew1" tabindex="0" role="tab"><span class="sr-only">The commander</span></button>
+      <button aria-selected="false" aria-controls="crew2" data-image="image-crew2" tabindex="-1" role="tab"><span class="sr-only">The mission specialist</span></button>
+      <button aria-selected="false" aria-controls="crew3" data-image="image-crew3" tabindex="-1" role="tab"><span class="sr-only">The pilot</span></button>
+      <button aria-selected="false" aria-controls="crew4" data-image="image-crew4" tabindex="-1" role="tab"><span class="sr-only">The crew engineer</span></button>
     </div>
     
-    <article class="crew-details flow flow-space--small">
+    <article id="crew1" tabindex="0" role="tabpanel" class="crew-details flow flow-space--small">
       <div>
         <h2 class="fs-600 ff-serif uppercase">Commander</h2>
         <p class="fs-700 uppercase ff-serif">Douglas Hurley</p>
@@ -51,10 +52,43 @@
       and former NASA astronaut. He launched into space for the third time as 
       commander of Crew Dragon Demo-2.</p>
     </article>
+    <article id="crew2" tabindex="-1" role="tabpanel" class="crew-details flow flow-space--small" hidden>
+      <div>
+        <h2 class="fs-600 ff-serif uppercase">Mission Specialist</h2>
+        <p class="fs-700 uppercase ff-serif">MARK SHUTTLEWORTH</p>
+      </div>
+      <p>Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.</p>
+    </article>
+    <article id="crew3" tabindex="-1" role="tabpanel" class="crew-details flow flow-space--small" hidden>
+      <div>
+        <h2 class="fs-600 ff-serif uppercase">PILOT</h2>
+        <p class="fs-700 uppercase ff-serif">Victor Glover</p>
+      </div>
+      <p>Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer. </p>
+    </article>
+    <article id="crew4" tabindex="-1" role="tabpanel" class="crew-details flow flow-space--small" hidden>
+      <div>
+        <h2 class="fs-600 ff-serif uppercase">Flight Engineer</h2>
+        <p class="fs-700 uppercase ff-serif">Anousheh Ansari</p>
+      </div>
+      <p>Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space. </p>
+    </article>
     
-    <picture>
+    <picture id="image-crew1">
       <source srcset="image/crew1.webp" type="image/webp">
       <img src="image/crew1.png" alt="Douglas Hurley">
+    </picture>
+    <picture id="image-crew2" hidden>
+      <source srcset="image/crew2.webp" type="image/webp">
+      <img src="image/crew2.png" alt="Douglas Hurley">
+    </picture>
+    <picture id="image-crew3" hidden>
+      <source srcset="image/crew3.webp" type="image/webp">
+      <img src="image/crew3.png" alt="Douglas Hurley">
+    </picture>
+    <picture id="image-crew4" hidden>
+      <source srcset="image/crew4.webp" type="image/webp">
+      <img src="image/crew4.png" alt="Douglas Hurley">
     </picture>
   </main>
 </body>

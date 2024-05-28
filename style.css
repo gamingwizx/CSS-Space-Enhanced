@@ -34,8 +34,8 @@
 @media (max-width: 35em) {
     :root {
         --fs-800: 6.25rem;
-        --fs-700: 3rem;
-        --fs-600: 2rem;
+        --fs-700: 1.5rem;
+        --fs-600: 1.25rem;
         --fs-500: 16px;
         --fs-400: 15px;
 
@@ -102,7 +102,12 @@ textarea {
     --grid-gap: 2rem;
 }
 .grid-container p:not[class] {
-    max-width: 50ch;
+    max-width: 40ch;
+}
+@media (min-width: 35em) {
+    .grid-container--home > *:first-child {
+        max-width: 50ch;        
+    }
 }
 @media (min-width: 45em) {
     .grid-container {
@@ -112,7 +117,11 @@ textarea {
         column-gap: var(--grid-gap, 2rem);
         grid-template-columns: minmax(5rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
     }
+    .grid-container--home {
+        margin-top: 10rem;
+    }
     .grid-container--home > *:first-child {
+        
         grid-column: 2;
     }
 
@@ -123,7 +132,10 @@ textarea {
     }
     .grid-container--home {
         padding-bottom: max(10rem, 1vh);
-        align-items: end;
+        align-items: start;
+    }
+    .grid-container--home p:not[class] {
+        max-width: 50ch;
     }
 }
 
@@ -460,6 +472,7 @@ border-color: hsl(var(--clr-white) / 0.6);
         '. imagelmao .'
         '. tabs .'
         '. info .';
+        padding-inline: 2rem;
 }
 .title {
     grid-area: title;
@@ -467,10 +480,7 @@ border-color: hsl(var(--clr-white) / 0.6);
 }
 .grid-container--destination > picture {
     grid-area: imagelmao;
-}
-
-.grid-container > picture > img {
-    max-width: 90%;
+    align-self: start;
 }
 
 .grid-container--destination > .tab-list {
@@ -481,6 +491,10 @@ border-color: hsl(var(--clr-white) / 0.6);
 .grid-container--destination > .destination-info {
     justify-self: center;
     grid-area: info;
+}
+
+.grid-container--destination > picture > img {
+    max-width: 100%;
 }
 
 .destination-meta {
@@ -551,15 +565,21 @@ border-color: hsl(var(--clr-white) / 0.6);
 }
 
 .grid-container--crew > picture > img {
-    max-width: 80%;
+    max-width: 70%;
 }
 
 .grid-container > .dot-navigation {
     grid-area: navigation;
+    align-self: start;
+    padding-bottom: 3rem;
 }
 
 .grid-container > .crew-details {
     grid-area: details;
+}
+
+.crew-details h2 {
+    opacity: 0.5;
 }
 @media (min-width: 35rem) {
     
@@ -572,7 +592,6 @@ border-color: hsl(var(--clr-white) / 0.6);
     }
     .grid-container--crew > picture {
         
-        align-self: flex-end;
     }
 
     .grid-container--crew > picture > img {
@@ -600,10 +619,9 @@ border-color: hsl(var(--clr-white) / 0.6);
     ". details imagelmao ."
     ". navigation imagelmao ."
     ". navigation imagelmao .";
-    }
+}
     .grid-container--crew > picture > img {
-        max-width: 100%;
-        align-self: flex-end;
+        max-width: 70%;
     }
 }
 
@@ -620,7 +638,6 @@ border-color: hsl(var(--clr-white) / 0.6);
 }
 
 /* Technology */
-
 .grid-container--technology {
     grid-template-areas:
     "title"
@@ -649,11 +666,15 @@ border-color: hsl(var(--clr-white) / 0.6);
 }
 .grid-container--technology > picture {
     grid-area: image;
-    display: grid;
-    aspect-ratio: 1;
-    width: 100%;
     margin: 0;
-    
+    margin-top: 1rem;
+}
+.grid-container--technology > picture > img {
+    max-width: 100%;
+}
+
+.grid-container--technology > .technology-content p:last-child {
+    padding-inline: 2rem;
 }
 
 @media (min-width: 35rem) {
@@ -671,36 +692,36 @@ border-color: hsl(var(--clr-white) / 0.6);
     
     }
     .grid-container--technology > picture {
-        justify-self: flex-end;
         max-width: 100%;
+        margin-top: 1rem;
+    }
+
+    .grid-container--technology > picture > img {
+        max-width: 90%;
     }
 
     .technology-content p {
         max-width: 50ch;
     }
+
 }
 
 @media (min-width: 45rem) {
     
-    .grid-container {
-        padding-inline: 0rem;
-    }
+    
     .grid-container--technology {
-        grid-template-columns: 5rem minmax(1rem, 3rem) minmax(16rem, 1fr) minmax(25rem, 1fr);
         grid-template-areas:
-        ". title title ."
+        ". title title title"
         ". navigation details image"
         ". navigation details image"
         ". . . .";
-        justify-self: center;
-        align-items: center;
+        grid-template-columns: minmax(5rem, 1fr) minmax(3rem, 1fr) repeat(2, minmax(0, 30rem)) 0rem;
+        justify-self: start;
+        align-items: start;
     }
 
     
-    .grid-container--technology > picture {
-        margin: 0;
-        padding: 0;
-        justify-self: flex-end;
+    .grid-container--technology > picture > img {
         max-width: 80%;
     }
 
